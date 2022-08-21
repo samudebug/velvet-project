@@ -1,0 +1,19 @@
+.approved {
+  background-color: #00ff19bf;
+  border-color: #00ff19bf;
+}
+
+.open {
+  background-color: #001affbf;
+  border-color: #001affbf;
+}
+
+.review {
+  background-color: #fff500bf;
+  border-color: #fff500bf;
+}
+
+.cancelled {
+  background-color: #ff0000bf;
+  border-color: #ff0000bf;
+}
