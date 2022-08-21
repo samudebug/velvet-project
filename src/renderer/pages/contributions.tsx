@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import { Contribution, Status } from 'renderer/models/contribution';
-import ContributionComponent from './components/contribution';
+import ContributionComponent from '../components/contribution';
 
 const Contributions = () => {
   const contributions: Contribution[] = [
