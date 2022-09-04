@@ -1,17 +1,13 @@
-import { Button } from '@mui/material';
 import {
   MemoryRouter as Router,
   Routes,
   Route,
   Navigate,
 } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
 import './App.css';
 import Contributions from './pages/contributions';
-
-const Hello = () => {
-  return <Button variant="contained">Hello World</Button>;
-};
+import NewContribution from './pages/newContribution';
+import ViewContribution from './pages/viewContribution';
 
 export default function App() {
   return (
@@ -19,6 +15,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/contributions" />} />
         <Route path="/contributions" element={<Contributions />} />
+        <Route path="/contributions/new" element={<NewContribution />} />
+        <Route
+          path="/contributions/view/:contributionId"
+          element={<ViewContribution />}
+        />
       </Routes>
     </Router>
   );

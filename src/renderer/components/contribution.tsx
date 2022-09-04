@@ -15,7 +15,7 @@ const ContributionComponent: React.FC<ContributionProps> = (
       <Grid item container xs={2} justifyContent="center" alignItems="center">
         <StatusComponent status={contribution.status} />
       </Grid>
-      <Grid item container xs={10} justifyContent="center" alignItems="center">
+      <Grid item container xs={10} alignItems="center">
         <Stack spacing={2}>
           <Typography variant="h5" component="p">
             {contribution.ownerName}

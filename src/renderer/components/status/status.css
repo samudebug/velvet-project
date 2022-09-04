@@ -1,19 +1,19 @@
 .approved {
-  background-color: #00ff19bf;
-  border-color: #00ff19bf;
+  background-color: #00ff19bf !important;
+  border-color: #00ff19bf !important;
 }
 
 .open {
-  background-color: #001affbf;
-  border-color: #001affbf;
+  background-color: #001affbf !important;
+  border-color: #001affbf !important;
 }
 
 .review {
-  background-color: #fff500bf;
-  border-color: #fff500bf;
+  background-color: #fff500bf !important;
+  border-color: #fff500bf !important;
 }
 
 .cancelled {
-  background-color: #ff0000bf;
-  border-color: #ff0000bf;
+  background-color: #ff0000bf !important;
+  border-color: #ff0000bf !important;
 }

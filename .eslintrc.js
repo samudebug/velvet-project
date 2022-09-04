@@ -12,6 +12,8 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'react/prop-types': 'off',
+    'react/require-default-props': 'off',
   },
   parserOptions: {
     ecmaVersion: 2020,

@@ -12,8 +12,15 @@ import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+import os from 'os';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import readFiles from './readdir';
+import downloadTempFile from './downloadTempFile';
+import openFile from './openFile';
+import downloadPermFiles from './downloadPermFiles';
+import openFolder from './openFolder';
+import openTool from './openTool';
 
 class AppUpdater {
   constructor() {
@@ -29,6 +36,46 @@ ipcMain.on('ipc-example', async (event, arg) => {
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
   console.log(msgTemplate(arg));
   event.reply('ipc-example', msgTemplate('pong'));
+});
+ipcMain.on('read-files', async (event, arg) => {
+  const contributionPath = `${path.join(
+    os.homedir(),
+    'Documents',
+    'Traduções',
+    arg[0],
+    'original'
+  )}\\`;
+  const entries = await readFiles(contributionPath);
+  event.reply('read-files', entries);
+});
+
+ipcMain.on('open-folder', async (event, arg) => {
+  const contributionPath = `${path.join(
+    os.homedir(),
+    'Documents',
+    'Traduções',
+    arg[0],
+    'original'
+  )}\\`;
+  await openFolder(contributionPath);
+});
+
+ipcMain.on('open-tool', async (event, arg) => {
+  await openTool();
+});
+
+ipcMain.on('download-temp-file', async (event, arg) => {
+  const filePath = await downloadTempFile(arg[0]);
+  event.reply('download-temp-file', filePath);
+});
+
+ipcMain.on('download-perm-files', async (event, arg) => {
+  const files = await downloadPermFiles(arg[0], arg[1]);
+  event.reply('download-perm-files', files);
+});
+
+ipcMain.on('open-file', (event, arg) => {
+  openFile(arg[0]);
 });
 
 if (process.env.NODE_ENV === 'production') {

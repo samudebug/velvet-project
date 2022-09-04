@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Background>
+  <textStartX>150</textStartX>
+  <textStartY>125</textStartY>
+  <nameStartX>120</nameStartX>
+  <nameStartY>67</nameStartY>
+  <glyphScale>3.20</glyphScale>  
+  <ColorText>#FF5B5F6A</ColorText>
+  <ColorName>#FF421F2A</ColorName>
+  <LineSpacing>1</LineSpacing>
+</Background>
